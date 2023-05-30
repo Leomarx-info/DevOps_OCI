@@ -1,0 +1,12 @@
+- name: List instances of existing oci tenancy
+  hosts: localhost
+
+  tasks:
+    - name: List current created instances
+      oracle.oci.oci_compute_instance_facts:
+        instance_id: 'ocid1.instance.oc1.sa-saopaulo-1.antxeljryqvzvgychvpbgypx234vnbhndwgvpllpzabhmpytrs7nluohjrya'
+        compartment_id: 'ocid1.tenancy.oc1..aaaaaaaaxqtkjrprsuprfjn4jovmifo56yksxlrs7b3lhmquqec2wpjufxza'
+      register: result
+    - name: List Result
+      debug:
+        msg: "{{result}}"

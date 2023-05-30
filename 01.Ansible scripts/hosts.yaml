@@ -1,0 +1,7 @@
+all:
+  hosts:
+    140.238.182.26:
+  children:
+    webservers:
+      hosts:
+        140.238.182.26:
